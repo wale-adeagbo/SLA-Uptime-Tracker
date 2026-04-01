@@ -60,10 +60,6 @@ npm run build
 npm run start
 ```
 
-## Suggested GitHub repository name
-
-`SLA-Uptime-Tracker`
-
 ## API
 
 | Method | Path | Description |
