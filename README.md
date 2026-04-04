@@ -1,6 +1,6 @@
 # SLA / uptime tracker
 
-Small **Next.js** app that runs **HTTP GET** probes against your URLs, stores results in **SQLite**, and shows a **weekly SLA-style report** (successful probes ÷ total probes in the window).
+This is a small **Next.js** app that runs **HTTP GET** probes against your URLs, stores results in **SQLite**, and shows a **weekly SLA-style report** (successful probes ÷ total probes in the window).
 
 ## Features
 
