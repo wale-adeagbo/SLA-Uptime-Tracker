@@ -70,5 +70,4 @@ npm run start
 | DELETE | `/api/monitors/:id` | Remove monitor and its history |
 
 ## License
-
-Use your org’s default license.
+No license is set as default, this is just a trial but you can use your org's default license as a starter. 
