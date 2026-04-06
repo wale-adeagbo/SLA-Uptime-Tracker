@@ -10,25 +10,25 @@ This project reflects real-world IT Operations and Service Management practices,
 
 ## Key Features
 
-- Automated endpoint monitoring using scheduled probes
-- Uptime calculation and SLA tracking
-- Historical performance insights
-- Early detection of service degradation
-- Simple and extensible architecture for adding new services
+- Automated endpoint monitoring using scheduled probes.
+- Uptime calculation and SLA tracking.
+- Historical performance insights.
+- Early detection of service degradation.
+- Simple and extensible architecture for adding new services.
 
 ## Operational Value
 
-- Improves visibility into service health and availability
-- Enables tracking and reporting against SLA targets
-- Supports proactive incident detection and response
-- Provides data for reliability and performance improvements
+- Improves visibility into service health and availability.
+- Enables tracking and reporting against SLA targets.
+- Supports proactive incident detection and response.
+- Provides data for reliability and performance improvements.
 
 ## Use Cases
 
-- Monitoring internal or external service endpoints
-- Tracking uptime for business-critical systems
-- Supporting IT Service Management (ITSM) practices
-- Building dashboards for operational reporting
+- Monitoring internal or external service endpoints.
+- Tracking uptime for business-critical systems.
+- Supporting IT Service Management (ITSM) practices.
+- Building dashboards for operational reporting.
 
 ## Tech Stack
 
@@ -39,10 +39,10 @@ This project reflects real-world IT Operations and Service Management practices,
 
 ## Future Improvements
 
-- Alerting integrations (Slack, email, etc.)
-- Dashboard visualisation for SLA trends
-- Multi-region monitoring support
-- Integration with incident management tools
+- Alerting integrations (Slack, email, etc.).
+- Dashboard visualisation for SLA trends.
+- Multi-region monitoring support.
+- Integration with incident management tools.
 
 ---
 
