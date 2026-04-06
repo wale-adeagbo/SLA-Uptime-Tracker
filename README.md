@@ -1,78 +1,51 @@
-# SLA / uptime tracker
+# SLA Uptime Tracker
 
-A lightweight service monitoring system designed to track uptime and measure SLA compliance across critical services, enabling proactive incident detection and reliability reporting.
+A lightweight service monitoring and SLA tracking system designed to provide visibility into service availability, support proactive incident response, and improve operational reliability.
 
-## Features
+## Overview
 
-- Dashboard: add/remove monitors, **run checks** on demand
-- **Cron-friendly** endpoint: `GET` or `POST` `/api/cron/check` with `Authorization: Bearer <CRON_SECRET>` or `?secret=`
-- **Weekly report** page + JSON: `/api/report/weekly?days=7`
-- **CLI** one-shot (no HTTP): `npm run check-once` (uses same DB)
+The SLA Uptime Tracker continuously monitors service endpoints and calculates uptime against defined service level objectives (SLOs). It provides a structured way to measure reliability, identify degradation early, and support data-driven operational decisions.
+
+This project reflects real-world IT Operations and Service Management practices, focusing on observability, incident awareness, and service performance tracking.
+
+## Key Features
+
+- Automated endpoint monitoring using scheduled probes
+- Uptime calculation and SLA tracking
+- Historical performance insights
+- Early detection of service degradation
+- Simple and extensible architecture for adding new services
 
 ## Operational Value
-- Improves visibility into service health.
-- Enables SLA tracking and reporting.
-- Supports proactive incident response.
 
-## Requirements
+- Improves visibility into service health and availability
+- Enables tracking and reporting against SLA targets
+- Supports proactive incident detection and response
+- Provides data for reliability and performance improvements
 
-- Node **22+**
-- Writable **`data/`** directory (or set `DATA_DIR`)
+## Use Cases
 
-> **Serverless note:** SQLite needs a persistent disk. Run on a **VM, Docker, or Fly.io/Railway with volume** — not ideal for vanilla Vercel serverless.
+- Monitoring internal or external service endpoints
+- Tracking uptime for business-critical systems
+- Supporting IT Service Management (ITSM) practices
+- Building dashboards for operational reporting
 
-## Setup
+## Tech Stack
 
-```bash
-cd sla-uptime-tracker
-npm install
-cp .env.example .env.local
-npm run dev
-```
+- TypeScript
+- Node.js / Next.js
+- Scheduled jobs (cron-based monitoring)
+- REST APIs
 
-Open [http://localhost:3000](http://localhost:3000). The first boot seeds an **example.com** monitor unless `SEED_MONITORS` is set.
+## Future Improvements
 
-## Scheduling probes
+- Alerting integrations (Slack, email, etc.)
+- Dashboard visualisation for SLA trends
+- Multi-region monitoring support
+- Integration with incident management tools
 
-Every probe is one row in `check_results`. For a meaningful weekly SLA, run checks on a **fixed interval** (e.g. every 1–5 minutes).
+---
 
-**Option A — HTTP cron** (app must be running):
+## Why This Project Matters
 
-```bash
-curl -sS -H "Authorization: Bearer $CRON_SECRET" "https://your-host/api/cron/check"
-```
-
-**Option B — CLI cron**:
-
-```bash
-cd /path/to/sla-uptime-tracker && npm run check-once
-```
-
-Example crontab (every 5 minutes):
-
-```cron
-*/5 * * * * cd /path/to/sla-uptime-tracker && CRON_SECRET=unused npm run check-once >> /var/log/sla-check.log 2>&1
-```
-
-(`CRON_SECRET` is not read by the CLI; only the HTTP route uses it.)
-
-## Production
-
-Set `CRON_SECRET` in production so strangers cannot trigger probes.
-
-```bash
-npm run build
-npm run start
-```
-
-## API
-
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/api/report/weekly?days=7` | JSON aggregate |
-| GET/POST | `/api/cron/check` | Run all probes (auth in prod) |
-| GET/POST | `/api/monitors` | List / create |
-| DELETE | `/api/monitors/:id` | Remove monitor and its history |
-
-## License
-No license is set as default, this is just a trial but you can use your org's default license as a starter. 
+Reliable systems are critical to business operations. This project focuses on measuring and improving service reliability, aligning with core IT Operations and Service Management principles such as monitoring, SLA tracking, and incident readiness.
