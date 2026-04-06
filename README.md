@@ -1,6 +1,6 @@
 # SLA / uptime tracker
 
-This is a small **Next.js** app that runs **HTTP GET** probes against your URLs, stores results in **SQLite**, and shows a **weekly SLA-style report** (successful probes ÷ total probes in the window).
+A lightweight service monitoring system designed to track uptime and measure SLA compliance across critical services, enabling proactive incident detection and reliability reporting.
 
 ## Features
 
@@ -8,6 +8,11 @@ This is a small **Next.js** app that runs **HTTP GET** probes against your URLs,
 - **Cron-friendly** endpoint: `GET` or `POST` `/api/cron/check` with `Authorization: Bearer <CRON_SECRET>` or `?secret=`
 - **Weekly report** page + JSON: `/api/report/weekly?days=7`
 - **CLI** one-shot (no HTTP): `npm run check-once` (uses same DB)
+
+## Operational Value
+- Improves visibility into service health.
+- Enables SLA tracking and reporting.
+- Supports proactive incident response.
 
 ## Requirements
 
